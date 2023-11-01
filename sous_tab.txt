@@ -1,0 +1,36 @@
+algorithme 
+fonction sous_tab(tableau tab:entier,d:entier,f:entier):tableau
+	variable 
+		sous_tableau():entier
+		j,c:entier
+	debut
+		pour i <-- d a f faire 
+			c<--c+1
+		fin pour
+		redim(sous_tableau(c))
+		j=0
+		pour i <-- d a f faire
+			sous_tableau[j] <-- tab[j]
+			j<--j+1
+		fin pour
+		retourne sous_tableau
+variable 
+	tableau t(10):entier
+	e,f,c:entier
+debut
+	pour i <--0 a 9 faire 
+		ecrire("entrer element de la case",i+1)
+		lire(t(i))
+	fin pour
+	ecrire("donner indice de debut")
+	lire(e)
+	ecrire("donner indice de fin")
+	lire(f)
+	si (e>f) alors
+		c<--e
+		e<--f
+		f<--c
+	fin si 
+	resultat=sous_tab(t,e,f)
+	ecrire(resultat)
+fin
